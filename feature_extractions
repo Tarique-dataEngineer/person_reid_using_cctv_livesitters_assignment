@@ -1,0 +1,42 @@
+Features extractions:
+
+It reads a video file, performs object detection on each frame, and then tracks detected persons using a KLT (Kanade-Lucas-Tomasi) tracker. Here's a brief explanation of the code:
+
+Import necessary libraries: The code imports various libraries, including OpenCV (cv2), PyTorch, and torchvision, as well as functions from these libraries.
+
+Open the video file: It opens a video file named 'cctv_footage.mp4' using OpenCV's VideoCapture.
+
+Create a directory for output frames: The script creates an output directory named 'frames_output' to save the frames as image files.
+
+Initialize the object detection model: The script uses the Faster R-CNN model with a ResNet-50 backbone for object detection. The model is pretrained and set to evaluation mode.
+
+Preprocess frames: There's a function preprocess_frame to resize, convert to RGB, and normalize the frames.
+
+Initialize an OrderedDict for tracked objects: An OrderedDict is used to store tracked objects and their corresponding trackers.
+
+Create an object tracker: A KLT tracker is created to track persons in the video.
+
+
+Main loop: The script enters a loop to process each frame of the video.
+
+It reads the frame from the video file and saves it as an image file in the output directory.
+
+The frame is preprocessed for object detection.
+
+Object detection is performed using the Faster R-CNN model. The code extracts bounding boxes for "person" class predictions.
+
+The script updates the trackers for the currently tracked objects and tracks persons using the KLT tracker.
+
+It adds new person detections to the tracked objects and initializes trackers for them.
+
+Bounding boxes are drawn around the tracked persons on the frame.
+The frame is displayed with tracked persons using OpenCV.
+
+The loop continues until the 'q' key is pressed.
+
+Release resources: After processing all frames, the video capture is released, and OpenCV windows are destroyed.
+
+
+This code essentially performs real-time object detection and tracking on a video stream, focusing on persons in this case. You can modify this code to work with different object classes, use different object tracking algorithms, or make other customizations as needed for your specific use case.
+
+But unfortunately I’m not able to correct errors because of time out of running. Still i know the whole process.
